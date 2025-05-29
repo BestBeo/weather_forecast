@@ -1,0 +1,31 @@
+# Yêu cầu thư viện cho dự án Weather Forecast
+
+# Thư viện giao diện và trực quan hóa
+streamlit
+folium
+streamlit-folium
+matplotlib>=3.10.0
+seaborn
+
+# Thư viện xử lý dữ liệu
+pandas>=2.2.2
+numpy>=1.26.0
+pillow>=11.2.1
+
+# Thư viện học máy và xử lý dữ liệu
+scikit-learn>=1.4.0
+scikit-learn-intelex==2025.5.0
+feature-engine==1.8.3
+imbalanced-learn==0.13.0
+catboost==1.2.8
+xgboost==2.1.4
+lightgbm==4.5.0
+
+# Thư viện tính toán khoa học
+scipy>=1.15.2
+
+# Thư viện Deep Learning
+tensorflow>=2.18.0
+
+# Thư viện khác
+ipython
