@@ -1,141 +1,142 @@
-Dự Báo Thời Tiết
-Weather Forecast là một ứng dụng web được xây dựng bằng Streamlit để cung cấp thông tin dự báo thời tiết theo thời gian thực và trực quan hóa dữ liệu thời tiết. Ứng dụng tích hợp API từ OpenWeatherMap và VisualCrossing để lấy dữ liệu thời tiết, sử dụng mô hình học máy (Gradient Boosting Classifier) để dự đoán tình trạng thời tiết, và hiển thị bản đồ thời tiết cùng các biểu đồ phân tích.
-Tính Năng
+# Weather Forecast ⛅️
 
-Tìm kiếm thời tiết theo địa điểm: Nhập tên thành phố (ví dụ: Hanoi, Da Nang) để xem thông tin thời tiết chi tiết.
-Nhập thông số thủ công: Cho phép người dùng nhập các tham số thời tiết (nhiệt độ, độ ẩm, lượng mưa, v.v.) để dự đoán tình trạng thời tiết.
-Bản đồ thời tiết tương tác: Hiển thị bản đồ thời tiết với các lớp như mưa, nhiệt độ, độ ẩm, tốc độ gió, v.v., sử dụng Folium và OpenWeatherMap.
-Trực quan hóa dữ liệu: Cung cấp các biểu đồ theo giờ về nhiệt độ, lượng mưa, tuyết, tầm nhìn, độ ẩm, mức độ mây, và tốc độ gió.
-Dự đoán thời tiết: Sử dụng mô hình Gradient Boosting Classifier để dự đoán các điều kiện thời tiết như "Clear", "Rain", "Snow", v.v.
-Giao diện thân thiện: Được xây dựng với Streamlit, hỗ trợ bố cục rộng và giao diện trực quan.
+**Weather Forecast** là một ứng dụng web dự báo thời tiết theo thời gian thật, được xây dựng bằng Streamlit. Ứng dụng khai thác API từ OpenWeatherMap và VisualCrossing để lấy dữ liệu thời tiết, kết hợp với mô hình học máy (Gradient Boosting Classifier) để dự đoán tình trạng thời tiết và trực quan hóa dữ liệu trên bản đồ và biểu đồ.
 
-Công Nghệ Sử Dụng
+---
 
-Ngôn ngữ lập trình: Python 3.8+
-Thư viện chính:
-Streamlit: Giao diện người dùng web.
-Folium: Hiển thị bản đồ thời tiết tương tác.
-P byas, NumPy: Xử lý và phân tích dữ liệu.
-Matplotlib, Seaborn: Trực quan hóa dữ liệu bằng biểu đồ.
-Scikit-learn: Xử lý mô hình học máy và chuẩn hóa dữ liệu.
-Feature-engine, Imbalanced-learn: Xử lý đặc trưng và cân bằng dữ liệu.
-CatBoost, XGBoost, LightGBM: Các mô hình học máy nâng cao.
-TensorFlow: Hỗ trợ Deep Learning.
-Pickle: Lưu và tải mô hình học máy.
+## ✨ Tính Năng
 
+* ⛺ Tìm kiếm thời tiết theo địa điểm
+* ✍️ Nhập thông số thủ công để dự đoán
+* 🌍 Bản đồ thời tiết tương tác với Folium
+* 📊 Trực quan hóa dữ liệu theo giờ
+* ✨ Dự đoán thời tiết bằng mô hình ML
+* 📅 Giao diện Streamlit dễ dùng, thân thiện
 
-API:
-OpenWeatherMap: Cung cấp dữ liệu bản đồ thời tiết.
-VisualCrossing: Cung cấp dữ liệu thời tiết chi tiết (ngày, giờ, hiện tại).
+---
 
+## 🚀 Công Nghệ Sử Dụng
 
-Mô hình học máy: Gradient Boosting Classifier (OneVsRestClassifier) để dự đoán tình trạng thời tiết.
+### Ngôn ngữ
 
-Cài Đặt
-Yêu cầu
+* Python 3.8+
 
-Python 3.8 hoặc cao hơn.
-Kết nối internet để truy cập API thời tiết.
-Tài khoản OpenWeatherMap và VisualCrossing để lấy API Key.
+### Thư viện chính
 
-Hướng dẫn cài đặt
+* `streamlit`: Giao diện web
+* `folium`: Bản đồ tương tác
+* `pandas`, `numpy`: Xử lý dữ liệu
+* `matplotlib`, `seaborn`: Biểu đồ
+* `scikit-learn`: Mô hình học máy
+* `feature-engine`, `imbalanced-learn`: Tiền xử dữ liệu
+* `catboost`, `xgboost`, `lightgbm`, `tensorflow`: Hỗ trợ ML/DL
+* `pickle`: Lưu/tải mô hình
 
-Clone repository:git clone https://github.com/BestBeo/weather_forecast.git
-cd weather_forecast
+### API
 
+* **OpenWeatherMap**: Dữ liệu thời tiết bản đồ
+* **VisualCrossing**: Dữ liệu thời tiết theo ngày/giờ
 
-Tạo môi trường ảo (khuyến nghị):python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+### Mô hình học máy
 
+* `GradientBoostingClassifier` (OneVsRestClassifier)
 
-Cài đặt các thư viện:Tất cả các thư viện cần thiết đã được liệt kê trong tệp requirements.txt. Chạy lệnh sau để cài đặt:pip install -r requirements.txt
+---
 
+## 📁 Cài Đặt
 
-Cấu hình API Key:
-Đăng ký tài khoản tại OpenWeatherMap và VisualCrossing.
-Thay thế api_key trong tệp map.py bằng API Key của bạn:api_key = "your_openweathermap_api_key"
+### Yêu cầu
 
+* Python >= 3.8
+* Kết nối Internet
+* API Key: OpenWeatherMap và VisualCrossing
 
-Cập nhật URL API trong crawl.py với API Key của VisualCrossing:url = f"https://weather.visualcrossing.com/...&key=your_visualcrossing_api_key"
+### Hướng dẫn cài đặt
 
+```bash
+# Clone repository
+$ git clone https://github.com/BestBeo/weather_forecast.git
+$ cd weather_forecast
 
+# Tạo và kích hoạt môi trường ảo
+$ python -m venv venv
+$ source venv/bin/activate      # Linux/Mac
+$ venv\Scripts\activate        # Windows
 
+# Cài đặt thư viện
+$ pip install -r requirements.txt
+```
 
-Chuẩn bị mô hình học máy:
-Tệp mô hình (gbC.pkl, scaler.pkl, label_encoder.pkl, best_grid_gb.pkl) đã được lưu sẵn trong thư mục source/save.
-Nếu bạn muốn huấn luyện lại mô hình, chạy notebook final_160_Weather_Prediction.ipynb với dữ liệu thời tiết phù hợp.
+### Cấu hình API Key
 
+* Vào `source/map.py`, thay `api_key = "your_openweathermap_api_key"`
+* Vào `source/crawl.py`, thay API Key trong URL:
 
-Chạy ứng dụng:streamlit run deploy.py
+  ```python
+  url = f"https://weather.visualcrossing.com/...&key=your_visualcrossing_api_key"
+  ```
 
+### Chuẩn bị mô hình
 
+* Tệp mô hình đã có trong `source/save/`:
 
-Cách Sử Dụng
+  * `gbC.pkl`, `scaler.pkl`, `label_encoder.pkl`, `best_grid_gb.pkl`
+* Muốn huấn luyện lại: chạy notebook `final_160_Weather_Prediction.ipynb`
 
-Chạy ứng dụng:
-Sau khi chạy lệnh streamlit run deploy.py, ứng dụng sẽ mở trong trình duyệt tại http://localhost:8501.
+### Chạy ứng dụng
 
+```bash
+$ streamlit run source/deploy.py
+```
 
-Tìm kiếm thời tiết:
-Chọn tab "🌍 Search" ở thanh bên.
-Nhập tên địa điểm (ví dụ: Hanoi) và nhấn "🔍 Tìm kiếm".
-Xem thông tin thời tiết chi tiết, bản đồ thời tiết, và các biểu đồ theo giờ.
+---
 
+## ⛰️ Cách Sử Dụng
 
-Nhập thông số thủ công:
-Chọn tab "📋 Input Parameters" ở thanh bên.
-Nhập các thông số thời tiết (nhiệt độ, độ ẩm, lượng mưa, v.v.).
-Nhấn "🔍 Dự đoán" để nhận dự đoán tình trạng thời tiết.
+1. **Khởi chạy:**
 
+   * Vào [http://localhost:8501](http://localhost:8501) sau khi chạy lệnh trên
 
-Xem bản đồ thời tiết:
-Chọn lớp thời tiết (ví dụ: mưa, nhiệt độ, gió) từ menu thả xuống.
-Bản đồ sẽ hiển thị dữ liệu thời tiết tương ứng cho khu vực được chọn.
+2. **Tìm kiếm địa điểm:**
 
+   * Chọn tab "🌍 Search"
+   * Nhập tên thành phố (vd: Hanoi)
+   * Xem thời tiết, bản đồ, biểu đồ
 
-Xem biểu đồ:
-Chọn loại biểu đồ (nhiệt độ, lượng mưa, tuyết, v.v.) từ menu thả xuống để xem dữ liệu theo giờ.
+3. **Nhập thông số thủ công:**
 
+   * Tab "📋 Input Parameters"
+   * Nhập nhiệt độ, độ ẩm, mưa...
+   * Nhấn "🔍 Dự đoán"
 
+4. **Xem bản đồ:**
 
-Cấu Trúc Dự Án
+   * Chọn lớp mưa, gió, nhiệt độ...
+
+5. **Xem biểu đồ:**
+
+   * Chọn loại biểu đồ để xem theo giờ
+
+---
+
+## 🗂️ Cấu Trúc Thư Mục
+
+```
 weather_forecast/
-├── baocao/                  # Thư mục chứa báo cáo và tài liệu
-│   ├── 07AD-Vẽu đư Đỗ ăn Chuyên ngành 3.docx
-│   ├── Báo cáo Đỗ ăn Chuyên ngành 3.pdf
-│   ├── DACN3 - Weather Forecast.pdf
-│   ├── Đề cương Đỗ ăn Chuyên ngành 3.docx
-│   └── Đề cương Đỗ ăn Chuyên ngành 3.pdf
-├── data/                    # Thư mục chứa dữ liệu và hình ảnh
-│   ├── day/                 # Dữ liệu ngày
-│   ├── hour/                # Dữ liệu giờ
-│   ├── images/              # Thư mục chứa hình ảnh
-│   │   ├── background.png   # Ảnh nền ứng dụng
-│   │   ├── clear.png        # Hình ảnh điều kiện thời tiết "Clear"
-│   │   ├── cloudy.png       # Hình ảnh điều kiện thời tiết "Cloudy"
-│   │   ├── drizzle.png      # Hình ảnh điều kiện thời tiết "Drizzle"
-│   │   ├── fog.png          # Hình ảnh điều kiện thời tiết "Fog"
-│   │   ├── haze.png         # Hình ảnh điều kiện thời tiết "Haze"
-│   │   ├── rain.png         # Hình ảnh điều kiện thời tiết "Rain"
-│   │   ├── snow.png         # Hình ảnh điều kiện thời tiết Bergman
-│   │   ├── thunderstorms.png # Hình ảnh điều kiện thời tiết "Thunderstorms"
-│   ├── 160city_116960rows.csv # Dữ liệu thành phố
-│   └── find_data.csv        # Dữ liệu bổ sung
-├── source/                  # Thư mục chứa mã nguồn và mô hình
-│   ├── __pycache__/         # Cache Python
-│   ├── crawl.py             # Lấy và xử lý dữ liệu từ API VisualCrossing
-│   ├── deploy.py            # Ứng dụng Streamlit chính
-│   ├── map.py               # Hiển thị bản đồ thời tiết với Folium
-│   ├── visualization.py     # Tạo các biểu đồ trực quan hóa dữ liệu
-│   └── save/                # Thư mục chứa mô hình học máy
-│       ├── best_grid_gb.pkl # Mô hình tối ưu hóa GridSearch
-│       ├── deep.keras       # Mô hình Deep Learning (TensorFlow)
-│       ├── gbC.pkl          # Mô hình Gradient Boosting Classifier
-│       ├── label_encoder.pkl # LabelEncoder
-│       └── scaler.pkl       # StandardScaler
-├── final_160_Weather_Prediction.ipynb # Notebook huấn luyện mô hình
-└── requirements.txt         # Danh sách thư viện cần thiết
+├── baocao/              # Báo cáo & tài liệu
+├── data/                # Dữ liệu & hình ảnh
+│   ├── day/, hour/, images/
+├── source/              # Mã nguồn & mô hình
+│   ├── crawl.py
+│   ├── deploy.py
+│   ├── map.py
+│   ├── visualization.py
+│   └── save/
+│       ├── gbC.pkl, scaler.pkl, label_encoder.pkl, best_grid_gb.pkl
+├── final_160_Weather_Prediction.ipynb
+├── requirements.txt
+```
 
+---
 
-Cảm ơn bạn đã sử dụng Weather Forecast! 🌦️
+## 🙏 Cảm ơn bạn đã sử dụng **Weather Forecast**! 🌧️
